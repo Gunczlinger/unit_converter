@@ -4,10 +4,26 @@
     <string name="enter_prompt">Enter a number to convert!</string>
     <string name="example_dec">Decimal-form (ex. \"0.00\")</string>
     <string name="result_prompt">Your result will be shown below</string>
+    <string name="result_here">Result here</string>
     <string-array name="conversion_classes">
         <item>Temperature</item>
         <item>Distance</item>
         <item>Weight</item>
     </string-array>
+    <string-array name="temp_conversion">
+        <item>Temperature</item>
+        <item>Distance</item>
+        <item>Weight</item>
+    </string-array>
+    <string-array name="dist_conversion">
+            <item>Temperature</item>
+            <item>Distance</item>
+            <item>Weight</item>
+        </string-array>
+    <string-array name="weight_conversion">
+            <item>Temperature</item>
+            <item>Distance</item>
+            <item>Weight</item>
+        </string-array>
 
 </resources>
