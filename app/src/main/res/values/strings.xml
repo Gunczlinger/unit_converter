@@ -5,25 +5,31 @@
     <string name="example_dec">Decimal-form (ex. \"0.00\")</string>
     <string name="result_prompt">Your result will be shown below</string>
     <string name="result_here">Result here</string>
+    <string name="blank_conversion">Please choose a method of conversion</string>
     <string-array name="conversion_classes">
         <item>Temperature</item>
         <item>Distance</item>
         <item>Weight</item>
     </string-array>
     <string-array name="temp_conversion">
-        <item>Temperature</item>
-        <item>Distance</item>
-        <item>Weight</item>
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+        <item>Kelvin</item>
+        <item>People</item>
     </string-array>
     <string-array name="dist_conversion">
-            <item>Temperature</item>
-            <item>Distance</item>
-            <item>Weight</item>
+            <item>Centimeters</item>
+            <item>Inches</item>
+            <item>Feet</item>
+            <item>Yards</item>
+            <item>Meters</item>
+            <item>Kilometers</item>
         </string-array>
     <string-array name="weight_conversion">
-            <item>Temperature</item>
-            <item>Distance</item>
-            <item>Weight</item>
+            <item>Grams</item>
+            <item>Ounces</item>
+            <item>Pounds</item>
+            <item>Kilograms</item>
         </string-array>
 
 </resources>

@@ -70,6 +70,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!--android:prompt="@string/blank_conversion"-->
+
     <Spinner
         android:id="@+id/in_spinner"
         android:layout_width="0dp"
