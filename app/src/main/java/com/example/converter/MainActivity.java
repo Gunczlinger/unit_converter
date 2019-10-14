@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         classAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         classSpinner.setAdapter(classAdapter);
+        classSpinner.setOnItemSelectedListener(this); //What's wrong here?
+
 
         tempAdapter = ArrayAdapter.createFromResource(this,
                R.array.temp_conversion, android.R.layout.simple_spinner_item);
@@ -56,9 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
         inSpinner = (Spinner) findViewById(R.id.in_spinner);
         inSpinner.setAdapter(tempAdapter);
+        inSpinner.setOnItemSelectedListener(this); //What's wrong here?
+
 
         outSpinner = (Spinner) findViewById(R.id.out_spinner);
         outSpinner.setAdapter(tempAdapter);
+        outSpinner.setOnItemSelectedListener(this); //What's wrong here?
 
 
 //break here @Responding to User Selections
