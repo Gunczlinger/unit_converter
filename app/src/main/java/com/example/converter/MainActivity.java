@@ -12,12 +12,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    private int inFactor;
+    private int outFactor;
+    private enum Conversion {TEMP, DIST, WEIGHT;}
     public Spinner classSpinner;
     public Spinner inSpinner;
     public Spinner outSpinner;
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public ArrayAdapter<CharSequence> tempAdapter;
     public ArrayAdapter<CharSequence> distAdapter;
     public ArrayAdapter<CharSequence> weightAdapter;
+    public Conversion convertType;
 
 
     @Override
@@ -123,6 +128,49 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public float convert(){
+        switch(convertType){
+            return 1;
+        }
         return 1;
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        Spinner selected = (Spinner) parent;
+        int i = selected.getSelectedItemPosition();
+        switch(selected.getId()){
+            case R.id.convert_class:
+                switch(i){
+                    case 0:
+                        setOptions("t");
+                        convertType = Conversion.TEMP;
+                        break;
+                    case 1:
+                        setOptions("d");
+                        convertType = Conversion.DIST;
+                        break;
+                    case 2:
+                        setOptions("w");
+                        convertType = Conversion.WEIGHT;
+                        break;
+                    default:
+                        setOptions("");
+                        break;
+                }
+                break;
+            case R.id.in_spinner:
+                switch
+                break;
+            case R.id.out_spinner:
+                break;
+        }
+        // An item was selected. You can retrieve the selected item using
+        // parent.getItemAtPosition(pos)
+
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
     }
 }
