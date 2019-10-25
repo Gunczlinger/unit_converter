@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int inFactor;
     private int outFactor;
     private enum Conversion {TEMP, DIST, WEIGHT;}
+    public EditText input;
     public Spinner classSpinner;
     public Spinner inSpinner;
     public Spinner outSpinner;
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        input = (EditText) findViewById(R.id.value);
 
         //Start Spinner code
         classSpinner = (Spinner) findViewById(R.id.convert_class);
@@ -128,10 +132,90 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public float convert(){
+        float inVal = Float.valueOf(input.getText().toString());
+        float outVal = 0;
+        float temp = 0;
         switch(convertType){
-            return 1;
+            case TEMP:
+                switch(inSpinner.getSelectedItemPosition()){
+                    case 0: //Fahrenheit
+                        temp = ((inVal - 32) * 5) / 9;
+                        break;
+                    case 2: //Kelvin
+                        temp = inVal - 100;
+                        break;
+                    case 3: //Human beans
+                        temp = inVal * 37;
+                        break;
+                    default:
+                        break;
+                }
+                switch(outSpinner.getSelectedItemPosition()){
+                    case 0: //Fahrenheit
+                        outVal = ((temp * 9 ) / 5) + 32;
+                        break;
+                    case 2: //Kelvin
+                        outVal = temp + 100;
+                        break;
+                    case 3: //Human beans
+                        outVal = temp / 37;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case DIST:
+                switch(inSpinner.getSelectedItemPosition()){
+                    case 0: //Centimeters
+                        temp = inVal / 100;
+                        break;
+                    case 1: //Inches
+                        temp = inVal * (float)0.0254;
+                        break;
+                    case 2: //Feet
+                        temp = inval * (float)0.3048;
+                        break;
+                    case 3: //Yards
+                        temp = inVal * (float)0.9144;
+                        break;
+                    case 5: //Kilometers
+                        temp = inVal * 1000;
+                        break;
+                    default:
+                        break;
+                }
+                switch(outSpinner.getSelectedItemPosition()){
+                    case 0: //Centimeters
+                        temp = inVal * 100;
+                        break;
+                    case 1: //Inches
+                        temp = inVal / (float)0.0254;
+                        break;
+                    case 2: //Feet
+                        temp = inval / (float)0.3048;
+                        break;
+                    case 3: //Yards
+                        temp = inVal / (float)0.9144;
+                        break;
+                    case 5: //Kilometers
+                        temp = inVal / 1000;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case WEIGHT:
+                switch(inSpinner.getSelectedItemPosition()){
+
+                }
+                switch(outSpinner.getSelectedItemPosition()){
+
+                }
+                break;
+            default:
+                break;
         }
-        return 1;
+        return outVal;
     }
 
 
