@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case DIST:
                 switch(inSpinner.getSelectedItemPosition()){
                     case 0: //Centimeters
-                        temp = inVal / 100;
+                        temp = inVal / (float)100;
                         break;
                     case 1: //Inches
                         temp = inVal * (float)0.0254;
@@ -179,26 +179,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         temp = inVal * (float)0.9144;
                         break;
                     case 5: //Kilometers
-                        temp = inVal * 1000;
+                        temp = inVal * (float)1000;
                         break;
                     default:
                         break;
                 }
                 switch(outSpinner.getSelectedItemPosition()){
                     case 0: //Centimeters
-                        temp = inVal * 100;
+                        temp = inVal * (float)100;
                         break;
                     case 1: //Inches
                         temp = inVal / (float)0.0254;
                         break;
                     case 2: //Feet
-                        temp = inval / (float)0.3048;
+                        temp = inVal / (float)0.3048;
                         break;
                     case 3: //Yards
                         temp = inVal / (float)0.9144;
                         break;
                     case 5: //Kilometers
-                        temp = inVal / 1000;
+                        temp = inVal / (float)1000;
                         break;
                     default:
                         break;
@@ -206,10 +206,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case WEIGHT:
                 switch(inSpinner.getSelectedItemPosition()){
-
+                    case 1:
+                        temp = inVal * (float)28.3495; //less accurate
+                        break;
+                    case 2:
+                        temp = inVal * (float)453.592; //less accurate
+                        break;
+                    case 3:
+                        temp = inVal * 1000;
+                        break;
+                    default:
+                        break;
                 }
                 switch(outSpinner.getSelectedItemPosition()){
-
+                    case 1:
+                        temp = inVal / (float)28.3495; //less accurate
+                        break;
+                    case 2:
+                        temp = inVal / (float)453.592; //less accurate
+                        break;
+                    case 3:
+                        temp = inVal / 1000;
+                        break;
+                    default:
+                        break;
                 }
                 break;
             default:
