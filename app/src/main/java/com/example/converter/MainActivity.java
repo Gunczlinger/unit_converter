@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int outFactor;
     private enum Conversion {TEMP, DIST, WEIGHT;}
     public EditText input;
+    public EditText output;
     public Spinner classSpinner;
     public Spinner inSpinner;
     public Spinner outSpinner;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(toolbar);
 
         input = (EditText) findViewById(R.id.value);
+        output = (EditText) findViewById(R.id.output);
 
         //Start Spinner code
         classSpinner = (Spinner) findViewById(R.id.convert_class);
@@ -82,8 +84,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //String temp = convert();
+                output.setText(Float.toString(convert()));
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
             }
         });
     }
@@ -142,12 +146,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         temp = ((inVal - 32) * 5) / 9;
                         break;
                     case 2: //Kelvin
-                        temp = inVal - 100;
+                        temp = inVal - (float)273.15;
                         break;
                     case 3: //Human beans
                         temp = inVal * 37;
                         break;
                     default:
+                        temp = inVal;
                         break;
                 }
                 switch(outSpinner.getSelectedItemPosition()){
@@ -155,12 +160,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         outVal = ((temp * 9 ) / 5) + 32;
                         break;
                     case 2: //Kelvin
-                        outVal = temp + 100;
+                        outVal = temp + (float)273.15;
                         break;
                     case 3: //Human beans
                         outVal = temp / 37;
                         break;
                     default:
+                        outVal = temp;
                         break;
                 }
                 break;
@@ -173,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         temp = inVal * (float)0.0254;
                         break;
                     case 2: //Feet
-                        temp = inval * (float)0.3048;
+                        temp = inVal * (float)0.3048;
                         break;
                     case 3: //Yards
                         temp = inVal * (float)0.9144;
@@ -182,25 +188,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         temp = inVal * (float)1000;
                         break;
                     default:
+                        temp = inVal;
                         break;
                 }
                 switch(outSpinner.getSelectedItemPosition()){
                     case 0: //Centimeters
-                        temp = inVal * (float)100;
+                        outVal = temp * (float)100;
                         break;
                     case 1: //Inches
-                        temp = inVal / (float)0.0254;
+                        outVal = temp / (float)0.0254;
                         break;
                     case 2: //Feet
-                        temp = inVal / (float)0.3048;
+                        outVal = temp / (float)0.3048;
                         break;
                     case 3: //Yards
-                        temp = inVal / (float)0.9144;
+                        outVal = temp / (float)0.9144;
                         break;
                     case 5: //Kilometers
-                        temp = inVal / (float)1000;
+                        outVal = temp / (float)1000;
                         break;
                     default:
+                        outVal = temp;
                         break;
                 }
                 break;
@@ -216,19 +224,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         temp = inVal * 1000;
                         break;
                     default:
+                        temp = inVal;
                         break;
                 }
                 switch(outSpinner.getSelectedItemPosition()){
                     case 1:
-                        temp = inVal / (float)28.3495; //less accurate
+                        outVal = temp / (float)28.3495; //less accurate
                         break;
                     case 2:
-                        temp = inVal / (float)453.592; //less accurate
+                        outVal = temp / (float)453.592; //less accurate
                         break;
                     case 3:
-                        temp = inVal / 1000;
+                        outVal = temp / 1000;
                         break;
                     default:
+                        outVal = temp;
                         break;
                 }
                 break;
@@ -264,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 break;
             case R.id.in_spinner:
-                switch
+               // output.se
                 break;
             case R.id.out_spinner:
                 break;
