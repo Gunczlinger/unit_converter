@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
@@ -80,14 +81,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //break here @Responding to User Selections
         //End Spinner code
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        //FloatingActionButton fab = findViewById(R.id.fab);
+        Button fab = findViewById(R.id.action);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String temp = convert();
-                output.setText(Float.toString(convert()));
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
+                try{output.setText(Float.toString(convert()));}
+                catch(Exception e){
+                    Snackbar.make(view, "There's something wrong with your input!",
+                            Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                }
             }
         });
     }

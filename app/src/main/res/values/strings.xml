@@ -6,6 +6,7 @@
     <string name="result_prompt">Your result will be shown below</string>
     <string name="result_here">Result here</string>
     <string name="blank_conversion">Please choose a method of conversion</string>
+    <string name="convert_button">Convert!</string>
     <string-array name="conversion_classes">
         <item>Temperature</item>
         <item>Distance</item>
