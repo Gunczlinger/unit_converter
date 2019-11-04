@@ -1,0 +1,178 @@
+commit 2fc0c5cc63cecda22f3f1f4851457172544a25f3
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Mon Nov 4 09:48:41 2019 -0500
+
+    submission
+    
+    added screenshots
+
+ Screenshots/AppBase.png           | Bin 0 -> 77711 bytes
+ Screenshots/BadInput.png          | Bin 0 -> 91823 bytes
+ Screenshots/ConversionSuccess.png | Bin 0 -> 81230 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit ee1ad7b4824ba33134be4612b14e8720bae34376
+Author: Sample Name <rgunczl1@binghamton.edu>
+Date:   Sat Nov 2 22:14:57 2019 -0400
+
+    submission ready
+
+ README.md | 32 +++++++++++++++++++++++++++++++-
+ 1 file changed, 31 insertions(+), 1 deletion(-)
+
+commit 01fd4700f35d329f565eb9f7cc13675356d75b22
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Sat Nov 2 21:48:12 2019 -0400
+
+    submission ready
+    
+    switched "email" button with a "convert" button
+    bugtested and realized that pressing "convert" with blank input caused app to crash--fixed and added snackbar prompt
+    fixed layout and added theme
+
+ app/src/main/AndroidManifest.xml                   |  2 +-
+ .../java/com/example/converter/MainActivity.java   | 13 ++++++-----
+ app/src/main/res/layout/activity_main.xml          | 15 +++++++++++--
+ app/src/main/res/layout/content_main.xml           | 26 ++++++++++------------
+ app/src/main/res/values/strings.xml                |  1 +
+ 5 files changed, 35 insertions(+), 22 deletions(-)
+
+commit 89ac311617edb808c2c4c9d711c31278d51b41fd
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Wed Oct 30 10:40:19 2019 -0400
+
+    fully working mockup!
+
+ .../java/com/example/converter/MainActivity.java   | 38 ++++++++++++++--------
+ 1 file changed, 24 insertions(+), 14 deletions(-)
+
+commit 55879309a4deb0cc627ce2281e09a5269a50f9d5
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Mon Oct 28 10:42:03 2019 -0400
+
+    conversions finished
+
+ .../java/com/example/converter/MainActivity.java   | 34 +++++++++++++++++-----
+ 1 file changed, 27 insertions(+), 7 deletions(-)
+
+commit e127167d569c3611542de8b79f7698b8ee06a156
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Fri Oct 25 10:42:49 2019 -0400
+
+    conversions pt 1
+
+ .../java/com/example/converter/MainActivity.java   | 88 +++++++++++++++++++++-
+ 1 file changed, 86 insertions(+), 2 deletions(-)
+
+commit 738d34ee6421ae2b788d91db9dac2bb33704952f
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Wed Oct 23 10:42:51 2019 -0400
+
+    spinners working
+    
+    spinners now rotate
+
+ .../java/com/example/converter/MainActivity.java   | 50 +++++++++++++++++++++-
+ .../com/example/converter/SpinnerActivity.java     |  9 +++-
+ app/src/main/res/layout/content_main.xml           | 14 +++---
+ app/src/main/res/values/strings.xml                |  2 +-
+ 4 files changed, 65 insertions(+), 10 deletions(-)
+
+commit 29faadfbf243cdc34ab507075af3b4ac7859ee4d
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Mon Oct 14 10:38:03 2019 -0400
+
+    added Spinner Activity
+    
+    need to figure out how to get the onItemSelectedListener to work; think it's an import issue
+
+ app/src/main/java/com/example/converter/MainActivity.java  |  5 +++++
+ .../main/java/com/example/converter/SpinnerActivity.java   | 14 ++++++++++++++
+ 2 files changed, 19 insertions(+)
+
+commit 384a114e6ea929ab7ea57e3861073fb0347d8dba
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Mon Oct 7 10:40:02 2019 -0400
+
+    back on the horse
+    
+    also spent entire morning deleting lock files from buggy emulator
+
+ .../java/com/example/converter/MainActivity.java   | 54 +++++++++++++++-------
+ app/src/main/res/layout/content_main.xml           |  2 +
+ app/src/main/res/values/strings.xml                | 24 ++++++----
+ 3 files changed, 54 insertions(+), 26 deletions(-)
+
+commit 68604fbe8286653cff9c6e084abee477f6fc5661
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Wed Sep 4 10:42:09 2019 -0400
+
+    spinners
+    
+    Added working spinners and began switch function
+
+ .../java/com/example/converter/MainActivity.java   | 44 +++++++++++++++--
+ app/src/main/res/layout/content_main.xml           | 55 +++++++++++++++++-----
+ app/src/main/res/values/strings.xml                | 16 +++++++
+ 3 files changed, 99 insertions(+), 16 deletions(-)
+
+commit 6dd7022e36d0e47304fc456c6ebcfaab3a7e1550
+Author: Gunczlinger <rgunczl1@binghamton.edu>
+Date:   Fri Aug 30 10:44:43 2019 -0400
+
+    initial project
+    
+    First set of things in the project
+
+ .gitignore                                         |  14 ++
+ .idea/.name                                        |   1 +
+ .idea/codeStyles/Project.xml                       | 116 ++++++++++++++
+ .idea/gradle.xml                                   |  16 ++
+ .idea/misc.xml                                     |   9 ++
+ .idea/runConfigurations.xml                        |  12 ++
+ .idea/vcs.xml                                      |   6 +
+ app/.gitignore                                     |   1 +
+ app/build.gradle                                   |  30 ++++
+ app/proguard-rules.pro                             |  21 +++
+ .../example/converter/ExampleInstrumentedTest.java |  27 ++++
+ app/src/main/AndroidManifest.xml                   |  24 +++
+ .../java/com/example/converter/MainActivity.java   |  67 ++++++++
+ .../res/drawable-v24/ic_launcher_foreground.xml    |  34 ++++
+ .../main/res/drawable/ic_launcher_background.xml   | 170 ++++++++++++++++++++
+ app/src/main/res/layout/activity_main.xml          |  33 ++++
+ app/src/main/res/layout/content_main.xml           |  63 ++++++++
+ app/src/main/res/menu/menu_main.xml                |  10 ++
+ app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml |   5 +
+ .../res/mipmap-anydpi-v26/ic_launcher_round.xml    |   5 +
+ app/src/main/res/mipmap-hdpi/ic_launcher.png       | Bin 0 -> 2963 bytes
+ app/src/main/res/mipmap-hdpi/ic_launcher_round.png | Bin 0 -> 4905 bytes
+ app/src/main/res/mipmap-mdpi/ic_launcher.png       | Bin 0 -> 2060 bytes
+ app/src/main/res/mipmap-mdpi/ic_launcher_round.png | Bin 0 -> 2783 bytes
+ app/src/main/res/mipmap-xhdpi/ic_launcher.png      | Bin 0 -> 4490 bytes
+ .../main/res/mipmap-xhdpi/ic_launcher_round.png    | Bin 0 -> 6895 bytes
+ app/src/main/res/mipmap-xxhdpi/ic_launcher.png     | Bin 0 -> 6387 bytes
+ .../main/res/mipmap-xxhdpi/ic_launcher_round.png   | Bin 0 -> 10413 bytes
+ app/src/main/res/mipmap-xxxhdpi/ic_launcher.png    | Bin 0 -> 9128 bytes
+ .../main/res/mipmap-xxxhdpi/ic_launcher_round.png  | Bin 0 -> 15132 bytes
+ app/src/main/res/values/colors.xml                 |   6 +
+ app/src/main/res/values/dimens.xml                 |   3 +
+ app/src/main/res/values/strings.xml                |  13 ++
+ app/src/main/res/values/styles.xml                 |  20 +++
+ .../com/example/converter/ExampleUnitTest.java     |  17 ++
+ build.gradle                                       |  27 ++++
+ gradle.properties                                  |  20 +++
+ gradle/wrapper/gradle-wrapper.jar                  | Bin 0 -> 54329 bytes
+ gradle/wrapper/gradle-wrapper.properties           |   6 +
+ gradlew                                            | 172 +++++++++++++++++++++
+ gradlew.bat                                        |  84 ++++++++++
+ settings.gradle                                    |   2 +
+ 42 files changed, 1034 insertions(+)
+
+commit 5435e285c5b8300106a492f8c04d3862c843f7dd
+Author: Sample Name <rgunczl1@binghamton.edu>
+Date:   Mon Aug 26 10:26:09 2019 -0400
+
+    Initial commit
+
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
